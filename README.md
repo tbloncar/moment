@@ -1,4 +1,4 @@
-moment
+MOMENT
 ======
 
-For capturing and connecting moments.
+A Rails 4 sandbox for working with image meta data.
