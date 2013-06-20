@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/picuous/exifr.git
+  revision: 1911eff333f7498b8a8de22c3d27e413889d8572
+  specs:
+    exifr (1.0.3)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: dbbdee23b9ac809ffbd9d73a87d1293c1f8f2e54
   specs:
@@ -151,6 +157,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  exifr!
   jbuilder (~> 1.2)
   jquery-rails
   paperclip!

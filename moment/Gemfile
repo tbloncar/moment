@@ -6,6 +6,7 @@ gem 'rack-mini-profiler'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'rspec-rails', '~> 2.0'
+gem 'exifr', :git => 'git://github.com/picuous/exifr.git'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
