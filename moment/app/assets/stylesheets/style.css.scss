@@ -1,0 +1,75 @@
+/******************************************
+
+  CSS for Moment
+  Author: @tbloncar
+  Date: June 2013
+
+*******************************************
+*******************************************/
+
+/* COMMON
+-------------------------------------------
+*******************************************/
+
+.main-header {
+  background: #222;
+  height: 60px;
+}
+
+.logo {
+  font-size: 18px;
+  color: #fff;
+  font-family: 'Syncopate', sans-serif;
+  display: inline-block;
+  float: left;
+  margin: 20px 0 0 0;
+  font-style: italic;
+}
+
+.main-nav {
+  float: right;
+}
+
+.page-header h1 {
+  font-size: 20px;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  border-radius: 0;
+  border: 1px solid #ddd;
+  background: #fcfcfc;
+  font-size: 12px;
+  transition: background 1s;
+  &:focus {
+    outline: none;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: none;
+  }
+}
+
+.form-field {
+  margin: 0 0 10px 0;
+}
+
+.form-submit {
+  background: #EEE9E9;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 10px 25px;
+}
+
+
+/* PAGES
+--------------------------------------------
+*******************************************/
+
+.item {
+  background: #ccc;
+  margin-bottom: 10px;
+  display: block;
+}
