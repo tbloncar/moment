@@ -3,19 +3,20 @@
 <head>
   <title>Moment</title>
   <link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="main-header">
     <div class="container">
-      <span class="logo">Moment</span>
+      <a class="logo" href="/">Moment</a>
       <nav class="main-nav">
         <% if signed_in? %>
-          <%= link_to "Sign Out", session_url, method: :delete %>
+          <%= link_to "Sign Out", session_url, method: :delete, class: "red-background main-header-link" %>
         <% else %>
-          <%= link_to "Create Account", new_user_url %>
-          <%= link_to "Sign In", new_session_url %>
+          <%= link_to "Create Account", new_user_url, class: "purple-background main-header-link" %>
+          <%= link_to "Sign In", new_session_url, class: "green-background main-header-link" %>
         <% end %>
       </div>
     </nav>
