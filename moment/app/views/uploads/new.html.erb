@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1>Upload Photo</h1>
+</div>
+<div class="row">
+  <div class="span12">
+    <%= form_for @upload do |f| %>
+      <div class="form-field">
+        <%= f.file_field :image %>
+      </div>
+      <div class="form-field">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </div>
+      <div class="form-field">
+        <%= f.submit "Upload Photo", class: "form-submit" %>
+      </div>
+    <% end %>
+  </div>
+</div>

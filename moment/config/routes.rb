@@ -8,8 +8,11 @@ Moment::Application.routes.draw do
 
   get "/register" => "users#new", as: :new_user
   post "/users" => "users#create", as: :users
-
   get "/:path" => "users#show", as: :user
+
+  get "/uploads/new" => "uploads#new", as: :new_upload
+  post "/uploads" => "uploads#create", as: :uploads
+  get "/:path/uploads/:upload_id" => "uploads#show", as: :upload
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

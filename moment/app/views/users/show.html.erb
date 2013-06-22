@@ -1,3 +1,14 @@
 <div class="page-header">
   <h1><%= @user.full_name %></h1>
 </div>
+<div class="row">
+  <div class="span12">
+    <p><%= @user.bio %></p>
+    <div class="user-uploads">
+      <% @user.uploads.each do |upload| %>
+        <%= image_tag upload.image.url(:medium) %>
+        <p><%= upload.description %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
