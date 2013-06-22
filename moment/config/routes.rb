@@ -1,6 +1,11 @@
 Moment::Application.routes.draw do
   
   root "pages#index"
+
+  get "/register" => "users#new", as: :new_user
+  post "/users" => "users#create", as: :users
+
+  get "/:path" => "users#show", as: :user
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
