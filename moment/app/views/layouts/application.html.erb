@@ -11,8 +11,12 @@
     <div class="container">
       <span class="logo">Moment</span>
       <nav class="main-nav">
-        <a href="#">Sign In</a>
-        <a href="#">Sign Out</a>
+        <% if signed_in? %>
+          <%= link_to "Sign Out", session_url, method: :delete %>
+        <% else %>
+          <%= link_to "Create Account", new_user_url %>
+          <%= link_to "Sign In", new_session_url %>
+        <% end %>
       </div>
     </nav>
   </div>

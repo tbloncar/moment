@@ -2,6 +2,10 @@ Moment::Application.routes.draw do
   
   root "pages#index"
 
+  get "/sign-in" => "sessions#new", as: :new_session
+  post "/sessions" => "sessions#create", as: :sessions
+  delete "/sign-out" => "sessions#destroy", as: :session
+
   get "/register" => "users#new", as: :new_user
   post "/users" => "users#create", as: :users
 

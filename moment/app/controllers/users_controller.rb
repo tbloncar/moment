@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = "Success! You've created an account!"
-      redirect_to(user_url(@user.url_path))
+      redirect_to user_url(@user.url_path)
     else
       render 'new'
     end
