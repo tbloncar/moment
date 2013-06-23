@@ -26,4 +26,10 @@ class Upload < ActiveRecord::Base
     end
   end
 
+  def set_meta_info_from_exifr_data
+    self.time = EXIFR::JPEG.new(image.path).date_time
+    self.latitude = EXIFR::JPEG.new(image.path).try(:gps_lat)
+    self.longitude = EXIFR::JPEG.new(image.path).try(:gps_lng)
+    self.save
+  end
 end

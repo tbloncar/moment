@@ -16,6 +16,7 @@ class UploadsController < ApplicationController
     @upload.user_id = current_user.id
 
     if @upload.save
+      @upload.set_meta_info_from_exifr_data
       @upload.create_tags
       flash[:success] = "Upload successful!"
       redirect_to upload_url(current_user.url_path, @upload.id)
