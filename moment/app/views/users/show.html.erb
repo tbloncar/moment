@@ -5,10 +5,13 @@
   <div class="span12">
     <p><%= @user.bio %></p>
     <div class="user-uploads masonry">
-      <% @user.uploads.each do |upload| %>
-        <div class="item">
+      <% @user.uploads.recent.each do |upload| %>
+        <div class="item feed-item">
           <%= image_tag upload.image.url(:medium) %>
-          <p><%= upload.description %></p>
+          <p class="feed-item-description"><%= upload.description %></p>
+          <% upload.tags.each do |tag| %>
+            <%= link_to tag.name, tag_url(tag.name), class: "feed-item-tag" %>
+          <% end %>
         </div>
       <% end %>
     </div>

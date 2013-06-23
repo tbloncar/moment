@@ -1,8 +1,8 @@
 <div class="page-header">
-  <h1>Photo Feed</h1>
+  <h1>Photos Tagged with: <%= @tag.name %></h1>
 </div>
 <div class="masonry">
-  <% @uploads.each do |upload| %>
+  <% @tag.uploads.recent.each do |upload| %>
     <div class="item feed-item">
       <%= image_tag upload.image.url(:medium) %>
       <p class="feed-item-description"><%= upload.description %></p>

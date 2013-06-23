@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include SessionsHelper
   def new
     @user = User.new
   end
@@ -9,6 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = "Success! You've created an account!"
+      sign_in(@user)
       redirect_to user_url(@user.url_path)
     else
       render 'new'

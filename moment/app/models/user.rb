@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :uploads
   has_many :favorites
 
+  validates :email, uniqueness: true
+
   def create_url_path
     return "#{f_name.downcase}-#{l_name.downcase}"
   end
