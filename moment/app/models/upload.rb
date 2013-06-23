@@ -7,6 +7,8 @@ class Upload < ActiveRecord::Base
   has_many :upload_tags
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
+  scope :recent, -> { order("created_at DESC").limit(20) }
+
   def create_tags
     potential_tags = description.split(/[\s\.]/).map { |tag| tag.downcase }
     existing_tags = Tag.all.map { |tag| tag.name }
