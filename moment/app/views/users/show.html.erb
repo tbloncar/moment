@@ -4,10 +4,12 @@
 <div class="row">
   <div class="span12">
     <p><%= @user.bio %></p>
-    <div class="user-uploads">
+    <div class="user-uploads masonry">
       <% @user.uploads.each do |upload| %>
-        <%= image_tag upload.image.url(:medium) %>
-        <p><%= upload.description %></p>
+        <div class="item">
+          <%= image_tag upload.image.url(:medium) %>
+          <p><%= upload.description %></p>
+        </div>
       <% end %>
     </div>
   </div>

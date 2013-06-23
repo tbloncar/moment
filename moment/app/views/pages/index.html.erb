@@ -2,16 +2,13 @@
   <h1>Moment</h1>
 </div>
 <div class="masonry">
-  <div class="item">
-    Right
-  </div>
-  <div class="item">
-    Hello
-  </div>
-  <div class="item">
-    Hello
-  </div>
-  <div class="item">
-    Hello
-  </div>
+  <% @uploads.each do |upload| %>
+    <div class="item">
+      <%= image_tag upload.image.url(:medium) %>
+      <p><%= upload.description %></p>
+      <% upload.tags.each do |tag| %>
+        <span><%= tag.name %> | </span>
+      <% end %>
+    </div>
+  <% end %>
 </div>
