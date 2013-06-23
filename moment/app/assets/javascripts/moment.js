@@ -3,7 +3,7 @@ jQuery(function($) {
   var container = document.querySelector('.masonry');
   var msnry = new Masonry(container, {
     columnWidth: 270,
-    gutter: 27,
+    gutter: 30,
     itemSelector: '.item',
     animate: true
   });
