@@ -4,7 +4,7 @@
 <div class="masonry">
   <% @tag.uploads.recent.each do |upload| %>
     <div class="item feed-item">
-      <%= image_tag upload.image.url(:medium) %>
+      <%= image_tag "placeholder.png", data: { original: upload.image.url(:medium) }, class: "lazy" %>
       <p class="feed-item-description"><%= upload.description %></p>
       <% upload.tags.each do |tag| %>
         <%= link_to tag.name, tag_url(tag.name), class: "feed-item-tag" %>

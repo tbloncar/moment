@@ -15,6 +15,6 @@
 //= require twitter/bootstrap
 //= require imagesloaded.pkgd
 //= require masonry.pkgd
+//= require jquery.lazyload
 //= require moment
-//= require turbolinks
 //= require_tree .
