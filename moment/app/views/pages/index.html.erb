@@ -8,7 +8,12 @@
       <p class="feed-item-upload-info">
         Uploaded <%= time_ago_in_words(upload.created_at) %> ago by <%= link_to upload.user.full_name, user_url(upload.user.url_path) %>
       </p>
-      <p class="feed-item-description"><%= upload.description %></p>
+      <p class="feed-item-description">
+        <% if upload.city.present? %>
+          <span class="entypo-location feed-item-description-location"><%= upload.city %>, <%= upload.state_code %></span> -
+        <% end %>
+        <%= upload.description %>
+      </p>
       <% upload.tags.each do |tag| %>
         <%= link_to tag.name, tag_url(tag.name), class: "feed-item-tag" %>
       <% end %>

@@ -5,7 +5,12 @@
   <% @tag.uploads.recent.each do |upload| %>
     <div class="item feed-item">
       <%= image_tag "placeholder.png", data: { original: upload.image.url(:medium) }, class: "lazy" %>
-      <p class="feed-item-description"><%= upload.description %></p>
+      <p class="feed-item-description">
+        <% if upload.city.present? %>
+          <span class="entypo-location feed-item-description-location"><%= upload.city %>, <%= upload.state_code %></span> -
+        <% end %>
+        <%= upload.description %>
+      </p>
       <% upload.tags.each do |tag| %>
         <%= link_to tag.name, tag_url(tag.name), class: "feed-item-tag" %>
       <% end %>

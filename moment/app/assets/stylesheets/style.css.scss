@@ -16,7 +16,18 @@ $darkGreen: #3A6629;
 $purple: #BF5FFF;
 $red: #F2473F;
 
-/* COMMON
+/* Fonts
+-------------------------------------------
+*******************************************/
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+/* Common
 -------------------------------------------
 *******************************************/
 
@@ -141,6 +152,10 @@ input[type=submit] {
   padding: 5px 0;
   border-bottom: 1px dotted #ccc;
   margin-bottom: 0;
+}
+
+.feed-item-description-location:before {
+  padding-right: 5px;
 }
 
 .feed-item-tag {
