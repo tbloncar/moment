@@ -6,6 +6,18 @@ class Upload < ActiveRecord::Base
   has_many :tags, through: :upload_tags
   has_many :upload_tags
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  reverse_geocoded_by :latitude, :longitude do |obj, results|
+    if geo = results.first
+      obj.address       = geo.address
+      obj.city          = geo.city
+      obj.state         = geo.state
+      obj.state_code    = geo.state_code
+      obj.postal_code   = geo.postal_code
+      obj.country       = geo.country
+      obj.country_code  = geo.country_code
+    end
+  end
+  after_validation :reverse_geocode
 
   scope :recent, -> { order("created_at DESC").limit(20) }
 
