@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "can have a first name" do
+    user = User.new
+    user.f_name = "Travis"
+    user.f_name.should == "Travis"
+  end
 end
