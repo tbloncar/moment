@@ -62,7 +62,7 @@ body {
 
 .page-header h1 {
   font-size: 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 input[type=text],
@@ -197,6 +197,13 @@ input[type=submit] {
 }
 
 /* Profile Page */
+
+.profile-avatar {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #333;
+  margin-right: 10px;
+}
 
 .profile-bio {
   padding: 10px;

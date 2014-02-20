@@ -16,4 +16,10 @@ jQuery(function($) {
       });
     }
   });
+  
+  var source = new EventSource('/streams');
+  source.addEventListener('hello.world', function(response) {
+    var json = JSON.parse(response.data);
+    console.log(json.name);
+  });
 });

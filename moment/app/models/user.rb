@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :uploads
   has_many :favorites
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
   validates :email, uniqueness: true
 
